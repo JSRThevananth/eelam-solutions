@@ -44,7 +44,7 @@ The site has three language versions, each in its own folder:
 
 | Language | File | Status |
 |---|---|---|
-| French (default) | `index.html` (root) | **Not built yet** |
+| French (default) | `index.html` (root) | Built (Task 2, waiting for review) |
 | English | `en/index.html` | Built |
 | Tamil | `ta/index.html` | Built |
 
@@ -104,7 +104,7 @@ Portfolio: Roy's work tools at his employer may not be shown publicly without pe
 
 ## Open items (to do)
 
-1. Build the French page (`index.html` at root) from the English page.
+1. ~~Build the French page~~ Done in Task 2; Roy and a French speaker still review the text.
 2. Decide real print quantities for the Marketing materials package (Roy to check supplier prices), then update all 3 languages.
 3. Decide whether Tamil websites will be offered to clients.
 4. Add images to `assets/img/`.

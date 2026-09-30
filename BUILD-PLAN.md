@@ -10,8 +10,8 @@ All cost work is in Task 7.
 
 | # | Task | Status |
 |---|---|---|
-| 1 | Setup and safe start | [ ] |
-| 2 | French page (default) | [ ] |
+| 1 | Setup and safe start | [x] |
+| 2 | French page (default) | [x] built, waiting for Roy review |
 | 3 | Images | [ ] |
 | 4 | Real content | [ ] |
 | 5 | Quote form | [ ] |
