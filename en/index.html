@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EELAM Solutions | Websites, apps and marketing materials for $1,000</title>
+<meta name="description" content="Websites, business apps and marketing materials, designed and printed, for small businesses in Montréal. Every package $1,000 CAD, bilingual by default.">
+<meta property="og:image" content="../assets/img/og-share.jpg">
+<link rel="icon" href="../assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --evergreen:#10231f;
+  --evergreen-2:#183330;
+  --evergreen-line:#2a4742;
+  --sage:#e4e8df;
+  --sage-2:#d6dccf;
+  --ink:#1c2622;
+  --ink-soft:#4b5a54;
+  --mist:#b9c7c0;
+  --turmeric:#e3a72f;
+  --turmeric-deep:#8a5f0c;
+  --serif:"Newsreader", Georgia, "Times New Roman", serif;
+  --sans:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --wrap:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;font-family:var(--sans);font-size:17px;line-height:1.6;color:var(--ink);background:var(--sage);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--turmeric);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;line-height:1.1}
+h2{font-size:clamp(34px,4.4vw,52px);letter-spacing:-0.5px;max-width:18ch}
+p{margin:0}
+
+/* Image slots: shows the expected filename until the real image is added */
+.slot{position:relative;overflow:hidden;background:repeating-linear-gradient(135deg,rgba(255,255,255,.04) 0 10px,transparent 10px 20px),var(--evergreen-line);display:flex;align-items:center;justify-content:center}
+.slot::before{content:attr(data-file);font:500 13px var(--sans);color:var(--mist);padding:6px 10px;border:1px dashed var(--mist);border-radius:6px}
+.slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.slot.light{background:repeating-linear-gradient(135deg,rgba(0,0,0,.04) 0 10px,transparent 10px 20px),var(--sage-2)}
+.slot.light::before{color:var(--ink-soft);border-color:var(--ink-soft)}
+
+/* Header */
+header{position:sticky;top:0;z-index:20;background:var(--evergreen);border-bottom:1px solid var(--evergreen-line);padding-top:env(safe-area-inset-top,0px)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+.brand{font-family:var(--serif);font-size:24px;color:#fff;text-decoration:none;letter-spacing:.2px}
+.brand small{font-family:var(--sans);font-size:14px;color:var(--mist);margin-left:6px}
+.links{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+.links a{color:var(--mist);text-decoration:none;font-size:15px}
+.links a:hover{color:#fff}
+.nav-right{display:flex;align-items:center;gap:16px}
+.lang{font-size:14px;color:var(--mist)}
+.lang a{text-decoration:none;padding:2px 4px}
+.lang .on{color:#fff;border-bottom:1px solid var(--turmeric)}
+.btn{display:inline-block;font:600 15px var(--sans);text-decoration:none;padding:12px 22px;border-radius:999px;border:1px solid transparent;cursor:pointer;transition:background .2s,color .2s}
+.btn-gold{background:var(--turmeric);color:var(--evergreen)}
+.btn-gold:hover{background:#f0bb4f}
+.btn-ghost{border-color:var(--evergreen-line);color:#fff}
+.btn-ghost:hover{background:var(--evergreen-2)}
+
+/* Hero: the one bold moment */
+.hero{background:var(--evergreen);color:#fff;padding:72px 0 96px}
+.hero-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(44px,6vw,80px);letter-spacing:-1.5px;max-width:11ch}
+.hero .lede{margin-top:24px;font-size:19px;color:var(--mist);max-width:40ch}
+.hero .ctas{margin-top:36px;display:flex;gap:12px;flex-wrap:wrap}
+.bento{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:120px;gap:12px}
+.tile{border-radius:22px;overflow:hidden;position:relative;text-decoration:none;color:#fff}
+.tile .slot{position:absolute;inset:0}
+.tile .tag{position:absolute;left:14px;bottom:14px;z-index:2;background:rgba(16,35,31,.82);font-size:14px;padding:6px 12px;border-radius:999px}
+.t-web{grid-column:span 4;grid-row:span 2}
+.t-price{grid-column:span 2;grid-row:span 2;background:var(--turmeric);color:var(--evergreen);padding:18px;display:flex;flex-direction:column;justify-content:space-between}
+.t-price .amt{font-family:var(--serif);font-size:54px;line-height:1}
+.t-price p{font-size:15px;line-height:1.35}
+.t-app,.t-mkt{grid-column:span 3;grid-row:span 1}
+@media (prefers-reduced-motion:no-preference){
+  .tile{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+  .t-price{animation-delay:.08s}.t-app{animation-delay:.16s}.t-mkt{animation-delay:.24s}
+  @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+}
+
+/* Light editorial sections */
+section{padding:104px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:48px;flex-wrap:wrap}
+.sec-head p{max-width:42ch;color:var(--ink-soft)}
+
+.packages{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pkg{background:#fff;border-radius:22px;overflow:hidden;display:flex;flex-direction:column}
+.pkg .slot{aspect-ratio:4/3}
+.pkg-body{padding:22px;display:flex;flex-direction:column;gap:12px;flex:1}
+.pkg h3{font-size:26px}
+.pkg .price{font-weight:600;color:var(--turmeric-deep)}
+.pkg ul{margin:0;padding-left:18px;color:var(--ink-soft);font-size:15px;line-height:1.55}
+.pkg a{margin-top:auto;font-weight:600;font-size:15px;text-underline-offset:4px}
+.addons{margin-top:16px;background:var(--sage-2);border-radius:22px;padding:22px 26px;display:flex;gap:40px;flex-wrap:wrap;font-size:15px}
+.addons b{font-weight:600}
+
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--ink)}
+.step{padding:28px 24px 0 0}
+.step .n{font-family:var(--serif);font-size:44px;color:var(--turmeric-deep);line-height:1}
+.step h3{font-size:24px;margin:14px 0 8px}
+.step p{color:var(--ink-soft);font-size:15px;max-width:26ch}
+
+.about{background:var(--evergreen);color:#fff}
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:center}
+.about .slot{aspect-ratio:1;border-radius:22px}
+.about blockquote{margin:0;font-family:var(--serif);font-size:clamp(26px,3vw,36px);line-height:1.25}
+.about .who{margin-top:20px;color:var(--mist);font-size:15px}
+.promises{margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:20px 32px}
+.promises div{border-top:1px solid var(--evergreen-line);padding-top:14px}
+.promises b{display:block;font-weight:600;margin-bottom:4px}
+.promises span{color:var(--mist);font-size:15px}
+
+.work{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:auto auto;gap:16px}
+.work figure{margin:0}
+.work .slot{border-radius:22px;aspect-ratio:3/2}
+.work .big{grid-row:span 2}
+.work .big .slot{aspect-ratio:auto;height:100%;min-height:420px}
+.work figcaption{margin-top:10px;font-size:15px;color:var(--ink-soft)}
+.work figcaption b{color:var(--ink);font-weight:600}
+
+.faq{max-width:820px}
+.faq details{border-top:1px solid var(--ink)}
+.faq details:last-child{border-bottom:1px solid var(--ink)}
+.faq summary{list-style:none;cursor:pointer;padding:22px 40px 22px 0;font-family:var(--serif);font-size:24px;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:18px;font-family:var(--sans);font-size:26px;color:var(--turmeric-deep);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 24px;color:var(--ink-soft);max-width:62ch}
+
+.quote{background:var(--sage-2)}
+.quote-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:stretch}
+form{background:#fff;border-radius:22px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+label{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500}
+input,select,textarea{font:16px var(--sans);color:var(--ink);padding:12px 14px;border:1px solid #c3cbc4;border-radius:12px;background:#fff}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--turmeric);border-color:transparent}
+.full{grid-column:1/-1}
+.err{color:#a3261b;font-size:13px;min-height:1em}
+.sent{grid-column:1/-1;background:var(--sage);border-radius:12px;padding:14px;font-size:15px;display:none}
+form .btn{justify-self:start;border:none}
+.quote .slot{border-radius:22px;min-height:100%}
+
+footer{background:var(--evergreen);color:var(--mist);padding:56px 0 calc(40px + env(safe-area-inset-bottom,0px));font-size:15px}
+.foot{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;align-items:start}
+.foot .slot{width:170px;height:52px;border-radius:8px}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.foot a{text-decoration:none}
+.foot a:hover{color:#fff}
+.legal{margin-top:40px;padding-top:20px;border-top:1px solid var(--evergreen-line);font-size:13px}
+
+@media (max-width:960px){
+  .hero-grid,.about-grid,.quote-grid{grid-template-columns:1fr}
+  .packages{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr;gap:24px}
+  .work{grid-template-columns:1fr}
+  .work .big{grid-row:auto}
+  .work .big .slot{min-height:280px}
+  .quote .slot{min-height:260px}
+}
+@media (max-width:420px){.nav-right .btn{display:none}}
+@media (max-width:760px){
+  .links{display:none}
+  .nav-right{gap:10px}
+  .nav-right .btn{padding:9px 14px;font-size:14px}
+  section{padding:72px 0}
+  .hero{padding:48px 0 64px}
+  .packages,.steps,.promises{grid-template-columns:1fr}
+  form{grid-template-columns:1fr;padding:22px}
+  .bento{grid-auto-rows:96px}
+  .t-price .amt{font-size:40px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap nav" aria-label="Main">
+    <a class="brand" href="#top" aria-label="EELAM Solutions home">EELAM <small>Solutions</small></a>
+    <ul class="links">
+      <li><a href="#packages">Packages</a></li>
+      <li><a href="#process">How it works</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="nav-right">
+      <span class="lang"><a href="../index.html" lang="fr">FR</a> <a class="on" href="index.html" aria-current="true">EN</a> <a href="../ta/index.html" lang="ta">தமிழ்</a></span>
+      <a class="btn btn-gold" href="#quote">Get a quote</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div>
+        <h1 id="hero-title">Everything a small business needs to look ready.</h1>
+        <p class="lede">Websites, business apps and marketing materials, designed and printed in Montréal, in French and English. Every package costs the same, so you know the price before we start.</p>
+        <div class="ctas">
+          <a class="btn btn-gold" href="#quote">Start a project</a>
+          <a class="btn btn-ghost" href="#packages">See what's included</a>
+        </div>
+      </div>
+      <div class="bento">
+        <a class="tile t-web" href="#packages"><div class="slot" data-file="hero-main.jpg"><img src="../assets/img/hero-main.jpg" alt="Website designed by EELAM Solutions shown on a laptop" onerror="this.remove()"></div><span class="tag">Websites</span></a>
+        <div class="tile t-price"><span class="amt">$1,000</span><p>One flat price per package. Taxes extra.</p></div>
+        <a class="tile t-app" href="#packages"><div class="slot" data-file="service-app.jpg"><img src="../assets/img/service-app.jpg" alt="" onerror="this.remove()"></div><span class="tag">Business apps</span></a>
+        <a class="tile t-mkt" href="#packages"><div class="slot" data-file="service-marketing.jpg"><img src="../assets/img/service-marketing.jpg" alt="" onerror="this.remove()"></div><span class="tag">Marketing materials</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="packages" aria-labelledby="pk-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="pk-title">Three packages. One price.</h2>
+        <p>Each package lists exactly what you get. The price only changes if you add something from the add-ons.</p>
+      </div>
+      <div class="packages">
+        <article class="pkg">
+          <div class="slot light" data-file="service-website.jpg"><img src="../assets/img/service-website.jpg" alt="" onerror="this.remove()"></div>
+          <div class="pkg-body">
+            <h3>Website</h3><span class="price">$1,000</span>
+            <ul><li>Up to 8 pages, French and English</li><li>Contact form and privacy setup</li><li>3 rounds of changes</li><li>1 year of hosting and domain</li></ul>
+            <a href="#quote">Ask about a website</a>
+          </div>
+        </article>
+        <article class="pkg">
+          <div class="slot light" data-file="service-app.jpg"><img src="../assets/img/service-app.jpg" alt="" onerror="this.remove()"></div>
+          <div class="pkg-body">
+            <h3>Business app</h3><span class="price">$1,000</span>
+            <ul><li>One tool built on Google Workspace</li><li>Forms, sheets and a live dashboard</li><li>Works on phones by QR code</li><li>Training for your team</li></ul>
+            <a href="#quote">Ask about an app</a>
+          </div>
+        </article>
+        <article class="pkg">
+          <div class="slot light" data-file="service-marketing.jpg"><img src="../assets/img/service-marketing.jpg" alt="" onerror="this.remove()"></div>
+          <div class="pkg-body">
+            <h3>Marketing materials</h3><span class="price">$1,000</span>
+            <ul><li>Design and printing of posters, business cards and flyers</li><li>Social media post designs</li><li>Set print quantities included</li><li>Print-ready and web files</li></ul>
+            <a href="#quote">Ask about marketing materials</a>
+          </div>
+        </article>
+      </div>
+      <div class="addons">
+        <span><b>Large print runs</b> quoted at cost plus a fixed margin</span>
+        <span><b>Care plan</b> hosting, updates and fixes, billed monthly</span>
+        <span><b>Extra pages or features</b> priced before we start</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" aria-labelledby="pr-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="pr-title">How a project runs</h2><p>Most projects take two to three weeks from brief to delivery.</p></div>
+      <div class="steps">
+        <div class="step"><span class="n">1</span><h3>Choose a package</h3><p>Pick the one that fits, or ask us which one does.</p></div>
+        <div class="step"><span class="n">2</span><h3>Send your brief</h3><p>A short call or form covering your business, audience and content.</p></div>
+        <div class="step"><span class="n">3</span><h3>Review the draft</h3><p>You see real work early and ask for changes.</p></div>
+        <div class="step"><span class="n">4</span><h3>Launch</h3><p>Your site goes live, your app is handed over or your print order ships.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" aria-labelledby="ab-title">
+    <div class="wrap about-grid">
+      <div class="slot" data-file="about-founder.jpg"><img src="../assets/img/about-founder.jpg" alt="Roy, founder of EELAM Solutions" onerror="this.remove()"></div>
+      <div>
+        <h2 id="ab-title" class="sr" style="position:absolute;left:-9999px">About EELAM Solutions</h2>
+        <blockquote>I build the tools I wished small businesses had: clear, bilingual, and priced so you can say yes without a long negotiation.</blockquote>
+        <p class="who">Roy, founder</p>
+        <div class="promises">
+          <div><b>Bilingual by default</b><span>French and English on every site.</span></div>
+          <div><b>Privacy-ready</b><span>Forms and cookies set up for Québec rules.</span></div>
+          <div><b>One contact</b><span>Web, apps, design and print in one place.</span></div>
+          <div><b>Fixed turnaround</b><span>A delivery date agreed at the start.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" aria-labelledby="wk-title">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="wk-title">Recent work</h2><p>A few projects built for real businesses and teams.</p></div>
+      <div class="work">
+        <figure class="big"><div class="slot light" data-file="portfolio-1.jpg"><img src="../assets/img/portfolio-1.jpg" alt="" onerror="this.remove()"></div><figcaption><b>Project name</b>. One line on what it does and who it's for.</figcaption></figure>
+        <figure><div class="slot light" data-file="portfolio-2.jpg"><img src="../assets/img/portfolio-2.jpg" alt="" onerror="this.remove()"></div><figcaption><b>Project name</b>. One line description.</figcaption></figure>
+        <figure><div class="slot light" data-file="portfolio-3.jpg"><img src="../assets/img/portfolio-3.jpg" alt="" onerror="this.remove()"></div><figcaption><b>Project name</b>. One line description.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" aria-labelledby="fq-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="fq-title">Questions before you start</h2></div>
+      <div class="faq">
+        <details><summary>What does the $1,000 include?</summary><p>Everything listed under the package. Nothing is hidden. Taxes (GST and QST) are added where they apply.</p></details>
+        <details><summary>When does the price change?</summary><p>Only when you ask for something outside the package, such as extra pages, a larger print run or a monthly care plan. You'll get the price in writing before any extra work starts.</p></details>
+        <details><summary>How long does a project take?</summary><p>Two to three weeks for most packages, once we have your content. Printed materials ship about a week after you approve the design.</p></details>
+        <details><summary>Do I own my website and files?</summary><p>Yes. When the project is paid, the site, design files and app are yours.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="quote" class="quote" aria-labelledby="qt-title">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="qt-title">Tell us what you need</h2><p>We reply within one business day with next steps and a start date.</p></div>
+      <div class="quote-grid">
+        <form id="qform" novalidate>
+          <label>Your name<input name="name" autocomplete="name" placeholder="Marie Tremblay"><span class="err"></span></label>
+          <label>Business name<input name="business" autocomplete="organization" placeholder="Boulangerie du Coin"></label>
+          <label>Email<input name="email" type="email" autocomplete="email" placeholder="marie@boulangerie.ca"><span class="err"></span></label>
+          <label>Phone<input name="phone" type="tel" autocomplete="tel" placeholder="514 555 0123"></label>
+          <label class="full">Package
+            <select name="package"><option value="">Choose a package</option><option>Website</option><option>Business app</option><option>Marketing materials</option><option>Not sure yet</option></select><span class="err"></span></label>
+          <label class="full">Project details<textarea name="details" rows="4" placeholder="What your business does and what you'd like built"></textarea></label>
+          <button class="btn btn-gold" type="submit">Send request</button>
+          <p class="sent" role="status" id="sent">Request sent. We'll reply within one business day.</p>
+        </form>
+        <div class="slot light" data-file="contact-side.jpg"><img src="../assets/img/contact-side.jpg" alt="" onerror="this.remove()"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="slot" data-file="logo-white.png"><img src="../assets/img/logo-white.png" alt="EELAM Solutions" onerror="this.remove()"></div>
+      <ul><li><a href="mailto:hello@eelamsolutions.ca">hello@eelamsolutions.ca</a></li><li><a href="tel:+15145550123">514 555 0123</a></li><li>Montréal, Québec</li></ul>
+      <ul><li><a href="#packages">Packages</a></li><li><a href="#faq">FAQ</a></li><li><a href="../privacy.html">Privacy policy</a></li></ul>
+      <ul><li><a href="#">LinkedIn</a></li><li><a href="#">Instagram</a></li></ul>
+    </div>
+    <p class="legal">© 2026 EELAM Solutions. Prices in Canadian dollars, taxes extra.</p>
+  </div>
+</footer>
+
+<script>
+// Placeholder: replace with the Apps Script web app URL when ready
+const FORM_ENDPOINT = "";
+const form = document.getElementById("qform");
+form.addEventListener("input", e => { const err = e.target.parentElement.querySelector(".err"); if (err) err.textContent = ""; });
+form.addEventListener("submit", async e => {
+  e.preventDefault();
+  let ok = true;
+  const setErr = (name, msg) => { form.elements[name].parentElement.querySelector(".err").textContent = msg; ok = false; };
+  if (!form.elements.name.value.trim()) setErr("name", "Enter your name.");
+  const em = form.elements.email.value.trim();
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) setErr("email", "Enter a valid email address.");
+  if (!form.elements.package.value) setErr("package", "Choose a package.");
+  if (!ok) return;
+  if (FORM_ENDPOINT) {
+    try { await fetch(FORM_ENDPOINT, { method: "POST", body: new FormData(form) }); } catch (err) { console.error(err); }
+  }
+  document.getElementById("sent").style.display = "block";
+  form.reset();
+});
+</script>
+</body>
+</html>
